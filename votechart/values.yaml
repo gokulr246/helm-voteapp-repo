@@ -1,0 +1,43 @@
+db:
+  image: postgres:15-alpine
+  user: postgres
+  password: postgres
+  port: 5432
+
+redis:
+  image: redis:alpine
+  port: 6379
+
+result:
+  image: dockersamples/examplevotingapp_result
+  port: 80
+
+vote:
+  image: dockersamples/examplevotingapp_vote
+  port: 80
+
+worker:
+  image: dockersamples/examplevotingapp_worker
+
+
+
+#services
+
+dbsvc:
+  name: db
+  port: 5432
+
+redissvc:
+  name: redis
+  port: 6379
+
+resultsvc:
+  name: result
+  port: 5001
+  nodePort: 31001
+
+votesvc:
+  name: vote
+  port: 5000
+  nodePort: 31000
+  targetPort: 80

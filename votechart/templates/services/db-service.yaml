@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dbsvc
+  name: {{ .Values.dbsvc.name }}
+spec:
+  type: ClusterIP
+  ports:
+  - name: "dbservice"
+    port: {{ .Values.dbsvc.port }}
+    targetPort: {{ .Values.dbsvc.port }}
+  selector:
+    app: dbsvc
