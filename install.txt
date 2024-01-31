@@ -1,0 +1,4 @@
+1. helm repo <local-repo-name> https://gokulr246.github.io/helm-voteapp-repo/
+2. helm repo list 
+    Repo name will be in list 
+3. helm install <name-of-chart> <local-repo-name>/votechart
